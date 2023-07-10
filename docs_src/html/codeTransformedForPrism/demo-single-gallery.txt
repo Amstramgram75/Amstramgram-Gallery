@@ -1,0 +1,21 @@
+&lt;div class="demo-single-gallery"&gt;
+	&lt;a
+		href="assets/img/single/pexels-johannes-plenio-2080963.jpg"
+		data-width="2000"
+		data-height="1333"
+		data-caption="&lt;a href='https://www.pexels.com/photo/forest-at-night-2080963/' target='_blank'&gt;Forest at Night by Johannes Plenio.&lt;/a&gt;&lt;br&gt;&lt;span style='font-size:0.8em;'&gt;Image type is : &lt;span class='type'&gt;&lt;/span&gt;&lt;/span&gt;"
+		data-title="Forest at Night by Johannes Plenio"
+		&gt;
+		&lt;script type="text/content"&gt;
+			&lt;source type="image/avif" srcset="assets/img/single/pexels-johannes-plenio-2080963.avif"/&gt;
+			&lt;source type="image/webp" srcset="assets/img/single/pexels-johannes-plenio-2080963.webp"/&gt;
+			&lt;source type="image/jpeg" srcset="assets/img/single/pexels-johannes-plenio-2080963.jpg"/&gt;
+		&lt;/script&gt;
+		&lt;picture&gt;
+			&lt;source type="image/avif" srcset="assets/img/single/thumbs/pexels-johannes-plenio-2080963.avif"/&gt;
+			&lt;source type="image/webp" srcset="assets/img/single/thumbs/pexels-johannes-plenio-2080963.webp"/&gt;
+			&lt;source type="image/jpeg" srcset="assets/img/single/thumbs/pexels-johannes-plenio-2080963.jpg"/&gt;
+			&lt;img src="assets/img/single/thumbs/pexels-johannes-plenio-2080963.jpg" alt="Forest at Night by Johannes Plenio" title="Click to open in fullscreen"/&gt;
+		&lt;/picture&gt;
+	&lt;/a&gt;
+&lt;/div&gt;

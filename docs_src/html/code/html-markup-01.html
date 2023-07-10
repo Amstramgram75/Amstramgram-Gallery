@@ -1,0 +1,45 @@
+<!-- 
+  Example 01 :
+  const gallery_01 = new AmstramgramGallery('.gallery a')
+-->
+<div class="gallery">
+  <a href="img/image_01.jpg" data-caption="First image caption" 
+    data-title="First image title" 
+    data-width="1600" data-height="1200">
+    <script type="text/content">
+      <source type="image/avif" srcset="img/image_01-400.avif"
+        media="(max-width: 400px), (max-height: 300px)">
+      <source type="image/avif" srcset="img/image_01-600.avif"
+        media="(max-width: 600px), (max-height: 450px)">
+      <source type="image/avif" srcset="img/image_01-1000.avif"
+        media="(max-width: 1000px), (max-height: 750px)">
+      <source type="image/avif" srcset="img/image_01-1500.avif"
+        media="(max-width: 1500px), (max-height: 1125px)">
+      <source type="image/avif" srcset="img/image_01-2000.avif"
+        media="(max-width: 2000px), (max-height: 1500px)">
+      <source type="image/avif" srcset="img/image_01-2500.avif"
+        media="(max-width: 2500px), (max-height: 1875px)">
+      <source type="image/avif" srcset="img/image_01-3000.avif"
+        media="(min-width: 2501px) and (min-height: 1876px)">
+    </script>
+    <!--
+      Since there is no data-alt attribute,
+      the content of the thumbnail alt attribute will be given
+      to the image alt attribute in the gallery.
+    -->
+    <img src="img/thumbnails/image_01.jpg" alt="First image">
+  </a>
+  ...
+  <!--
+    This link will be ignored by the gallery constructor 
+    because its href attribute does not point to an image.
+  -->
+  <a href="https://www.wikipedia.org/">
+    <img src="img/thumbnails/image_03.jpg">
+  </a>
+  ...
+  <a href="img/image_02.jpg" data-alt="Second image alt">
+    <img src="img/thumbnails/image_02.jpg" alt="Second thumbnail alt">
+  </a>
+  ...
+</div>

@@ -1,0 +1,15 @@
+<!-- Include the css -->
+<link type="text/css" rel="stylesheet" href="css/amstramgramGallery.css">
+
+<!-- Load polyfills if needed-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=Number.isInteger%2CArray.from%2CArray.prototype.includes%2CCustomEvent%2CWeakSet"></script>
+
+<!-- Include the javascript -->
+<script type="text/javascript" src="js/amstramgramGallery.min.js"></script>
+
+<!-- And later -->
+<script>
+  window.addEventListener("load", function () {
+    AmstramgramGallery('.gallery-item')
+  }, false)
+</script>

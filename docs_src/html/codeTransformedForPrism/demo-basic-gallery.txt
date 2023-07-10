@@ -1,0 +1,83 @@
+&lt;div class="demo-basic-gallery"&gt;
+	&lt;div
+		data-href="assets/img/basic/01-pexels-irina-iriser-673857_1406_2000.jpg"
+		data-width="1406"
+		data-height="2000"
+		data-caption="&lt;a href='https://www.pexels.com/photo/tilt-shift-lens-photo-of-blue-flowers-673857/' target='_blank'&gt;Tilt Shift Lens Photo of Blue Flowers by Irina Iriser&lt;/a&gt;"
+		data-title="Tilt Shift Lens Photo of Blue Flowers by Irina Iriser"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/01-pexels-irina-iriser-673857.jpg" alt="Tilt Shift Lens Photo of Blue Flowers by Irina Iriser" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/02-pexels-pixabay-414083_2000_1333.jpg"
+		data-width="2000"
+		data-height="1333"
+		data-caption="&lt;a href='https://www.pexels.com/photo/pink-flower-field-414083/' target='_blank'&gt;Pink Flower Field by Pixabay&lt;/a&gt;"
+		data-title="Pink Flower Field by Pixabay"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/02-pexels-pixabay-414083.jpg" alt="Pink Flower Field by Pixabay" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/03-pexels-venelin-dimitrov-3476312_2000_1320.jpg"
+		data-width="2000"
+		data-height="1320"
+		data-caption="&lt;a href='https://www.pexels.com/photo/purple-flower-field-during-sunset-3476312/' target='_blank'&gt;Purple Flower Field during Sunset by Venelin Dimitrov&lt;/a&gt;"
+		data-title="Purple Flower Field during Sunset by Venelin Dimitrov"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/03-pexels-venelin-dimitrov-3476312.jpg" alt="Purple Flower Field during Sunset by Venelin Dimitrov" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/04-pexels-daniel-absi-2415138_2000_1333.jpg"
+		data-width="2000"
+		data-height="1333"
+		data-caption="&lt;a href='https://www.pexels.com/photo/photo-of-red-tulip-field-2415138/' target='_blank'&gt;Red Tulip Field by Daniel Absi&lt;/a&gt;"
+		data-title="Red Tulip Field by Daniel Absi"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/04-pexels-daniel-absi-2415138.jpg" alt="Red Tulip Field by Daniel Absi" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/05-pexels-marek-rybarczyk-2677865_2000_1333.jpg"
+		data-width="2000"
+		data-height="1333"
+		data-caption="&lt;a href='https://www.pexels.com/photo/bed-of-red-and-yellow-petaled-flowers-2677865/' target='_blank'&gt;Bed of Red and Yellow Petaled Flowers by Marek Rybarczyk&lt;/a&gt;"
+		data-title="Bed of Red and Yellow Petaled Flowers by Marek Rybarczyk"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/05-pexels-marek-rybarczyk-2677865.jpg" alt="Bed of Red and Yellow Petaled Flowers by Marek Rybarczyk" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/06-pexels-petr-ganaj-13320405_1224_1999.jpg"
+		data-width="1224"
+		data-height="1999"
+		data-caption="&lt;a href='https://www.pexels.com/photo/purple-flower-field-13320405/' target='_blank'&gt;Purple Flower Field by Petr Ganaj&lt;/a&gt;"
+		data-title="Purple Flower Field by Petr Ganaj"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/06-pexels-petr-ganaj-13320405.jpg" alt="Purple Flower Field by Petr Ganaj" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/07-pexels-minamarie-michell-570041_2000_1325.jpg"
+		data-width="2000"
+		data-height="1325"
+		data-caption="&lt;a href='https://www.pexels.com/photo/landscape-photography-of-flower-garden-570041/' target='_blank'&gt;Flower Garden by Mina-Marie Michell&lt;/a&gt;"
+		data-title="Flower Garden by Mina-Marie Michell"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/07-pexels-minamarie-michell-570041.jpg" alt="Flower Garden by Mina-Marie Michell" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/08-pexels-zetong-li-1911869_2000_1331.jpg"
+		data-width="2000"
+		data-height="1331"
+		data-caption="&lt;a href='https://www.pexels.com/photo/meadow-of-sunflowers-1911869/' target='_blank'&gt;Meadow of Sunflowers by Zetong Li&lt;/a&gt;"
+		data-title="Meadow of Sunflowers by Zetong Li"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/08-pexels-zetong-li-1911869.jpg" alt="Meadow of Sunflowers by Zetong Li" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+	&lt;div
+		data-href="assets/img/basic/09-pexels-joão-jesus-2480072_2000_1333.jpg"
+		data-width="2000"
+		data-height="1333"
+		data-caption="&lt;a href='https://www.pexels.com/photo/selective-focus-photo-of-a-red-tulip-flower-2480072/' target='_blank'&gt;Red tulip flower by João Jesus&lt;/a&gt;"
+		data-title="Red tulip flower by João Jesus"
+		&gt;
+		&lt;img src="assets/img/basic/thumbs/09-pexels-joão-jesus-2480072.jpg" alt="Red tulip flower by João Jesus" title="Click to open in fullscreen"/&gt;
+	&lt;/div&gt;
+&lt;/div&gt;

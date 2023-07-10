@@ -1,0 +1,8 @@
+*.code-workspace
+.vscode
+node_modules
+docs_dev/*
+work
+*.tgz
+package-lock.json
+todo.txt

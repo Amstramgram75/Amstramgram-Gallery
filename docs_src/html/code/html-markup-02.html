@@ -1,0 +1,25 @@
+<!-- 
+  Example 02 :
+  const gallery_02 = new AmstramgramGallery('.gallery-item')
+-->
+<div class="one_div">
+  ...
+  <a href="img/image_01.jpg" class="gallery-item" data-caption="First image caption" data-title="First image title"
+    data-width="1600" data-height="1200">
+    <img src="img/thumbnails/image_01.jpg" alt="First image">
+  </a>
+  ...
+  <!--
+    This link will be ignored by the gallery constructor 
+    because its href attribute does not point to an image.
+  -->
+  <a href="https://www.wikipedia.org/" class="gallery-item">
+    <img src="img/thumbnails/image_03.jpg">
+  </a>
+  ...
+</div>
+...
+<div class="another_div gallery-item" data-href="img/image_02.jpg" data-alt="Second image alt">
+  <img src="img/thumbnails/image_02.jpg" alt="Second thumbnail alt">
+  ...
+</div>

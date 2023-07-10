@@ -1,0 +1,64 @@
+{
+  "name": "amstramgram-gallery",
+  "version": "1.0.0",
+  "description": "An ES6 class to use lightbox",
+  "author": "Amstramgram <contact@onfaitdessites.fr>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amstramgram75/Amstramgram-Gallery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Amstramgram75/Amstramgram-Gallery/issues"
+  },
+  "homepage": "https://github.com/Amstramgram75/Amstramgram-Gallery#readme",
+  "license": "MIT",
+  "main": "src/amstramgramGallery.js",
+  "style": "src/amstramgramGallery.css",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "dev": "rollup -c -w --environment BUILD:development",
+    "prod": "rollup -c --environment BUILD:production",
+    "dist": "rollup -c --environment BUILD:package",
+    "generateBasicDemo": "AGG -c generateGalleryConfigs/basicDemo.mjs",
+    "generateResponsiveDemo": "AGG -c generateGalleryConfigs/responsiveDemo.mjs",
+    "generateButtonDemo": "AGG -c generateGalleryConfigs/buttonDemo.mjs",
+    "generateSingleDemo": "AGG -c generateGalleryConfigs/singleDemo.mjs"
+  },
+  "devDependencies": {
+    "@alumna/reflect": "^1.0.5",
+    "@babel/code-frame": "^7.22.5",
+    "@babel/preset-env": "^7.22.7",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.2",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "amstramgram-gallery-generator": "^1.0.0",
+    "babel-plugin-prismjs": "^2.1.0",
+    "cssnano": "^6.0.1",
+    "fast-glob": "^3.3.0",
+    "fs-extra": "^11.1.1",
+    "htmlnano": "^2.0.4",
+    "postcss": "^8.4.25",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.0.0",
+    "posthtml": "^0.16.6",
+    "posthtml-include": "^1.7.4",
+    "prismjs": "^1.29.0",
+    "rollup": "^3.26.2",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-postcss-amstramgram": "^2.0.1",
+    "rollup-plugin-posthtml-amstramgram": "^2.0.1",
+    "rollup-plugin-replace-amstramgram": "^1.0.1",
+    "rollup-plugin-watcher-amstramgram": "^2.0.0",
+    "terser": "^5.18.2"
+  },
+  "dependencies": {
+    "amstramgram-event-emitter": "^1.0.3",
+    "amstramgram-pointer-detector": "^1.0.0",
+    "amstramgram-swipe-observer": "^1.0.0"
+  },
+  "browserslist": "defaults, ie 11, Safari >= 9"
+}

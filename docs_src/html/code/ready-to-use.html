@@ -1,0 +1,32 @@
+<!-- Include the css -->
+<link type="text/css" rel="stylesheet" href="css/amstramgramGallery.css">
+
+<!-- Load polyfills if needed-->
+<script>
+  if (
+    typeof Number.isInteger !== 'function'
+    || !Array.from 
+    || !Array.prototype.includes
+    || typeof window.CustomEvent !== "function"
+    || typeof window.WeakSet !== "function"
+  ) {
+    console.log("Loading Amstramgram Gallery polyfills")
+    var d = document, s = d.createElement('script');
+    s.async = "false";
+    s.defer = "true";
+    s.src = "js/polyfills/amstramgramGalleryPolyfills.min.js";
+    d.head.appendChild(s);
+  } else {
+    console.log("%cNone of the Amstramgram Gallery polyfills are needed", "color: green;")
+  }
+</script>
+
+<!-- Include the javascript -->
+<script type="text/javascript" src="js/amstramgramGallery.min.js"></script>
+
+<!-- And later -->
+<script>
+  window.addEventListener("load", function () {
+    AmstramgramGallery('.gallery-item')
+  }, false)
+</script>

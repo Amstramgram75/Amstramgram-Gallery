@@ -1,0 +1,30 @@
+{
+  "name": "amstramgram-gallery",
+  "version": "1.0.0",
+  "description": "An ES6 class to use lightbox",
+  "author": "Amstramgram <contact@onfaitdessites.fr>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Amstramgram75/Amstramgram-Gallery.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Amstramgram75/Amstramgram-Gallery/issues"
+  },
+  "homepage": "https://github.com/Amstramgram75/Amstramgram-Gallery#readme",
+  "license": "MIT",
+  "module": "amstramgramGallery.js",
+  "style": "amstramgramGallery.css",
+  "keywords": [
+    "lightbox",
+    "gallery",
+    "modal",
+    "responsive",
+    "class",
+    "es6"
+  ],
+  "dependencies": {
+    "amstramgram-event-emitter": "^1.0.3",
+    "amstramgram-pointer-detector": "^1.0.0",
+    "amstramgram-swipe-observer": "^1.0.0"
+  }
+}
