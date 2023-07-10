@@ -12,8 +12,8 @@
   },
   "homepage": "https://github.com/Amstramgram75/Amstramgram-Gallery#readme",
   "license": "MIT",
-  "module": "amstramgramGallery.js",
-  "style": "amstramgramGallery.css",
+  "module": "src/amstramgramGallery.js",
+  "style": "src/amstramgramGallery.css",
   "keywords": [
     "lightbox",
     "gallery",
