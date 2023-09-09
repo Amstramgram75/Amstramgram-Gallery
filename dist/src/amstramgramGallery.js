@@ -1161,7 +1161,6 @@ export default class AG extends EE {
     //Link is valid if it's an anchor whose href attribute matches the regexp
     //or if it has a data-href attribute that matches the rexexp
     const links = Array.from($$(d, selector)).filter((el) => (el.tagName == "A" && el.href.match(AG.#regexp)) || (el.hasAttribute('data-href') && el.getAttribute('data-href').match(AG.#regexp)))
-    console.log(links)
     const linksLength = links.length
     if (linksLength == 0) return
     links.forEach((link, id) => {

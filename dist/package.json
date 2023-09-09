@@ -1,6 +1,6 @@
 {
   "name": "amstramgram-gallery",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An ES6 class to use lightbox",
   "author": "Amstramgram <contact@onfaitdessites.fr>",
   "repository": {

@@ -1300,7 +1300,6 @@ var AmstramgramGallery = (function () {
       var links = Array.from($$(d, selector)).filter(function (el) {
         return el.tagName == "A" && el.href.match(_classStaticPrivateFieldSpecGet(AG, AG, _regexp)) || el.hasAttribute('data-href') && el.getAttribute('data-href').match(_classStaticPrivateFieldSpecGet(AG, AG, _regexp));
       });
-      console.log(links);
       var linksLength = links.length;
       if (linksLength == 0) return _possibleConstructorReturn(_this);
       links.forEach(function (link, id) {
