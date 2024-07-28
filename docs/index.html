@@ -835,7 +835,10 @@ AmstramgramGallery.off()
 
 </code></pre> </div> <div class="line"></div> <h3>Instance</h3> <h5>constructor</h5> <div class="code"> <pre><code class="language-javascript">
 /**
- * @param {String} selector css selector defining the elements to be included in the gallery
+ * @param {String | NodeList | Array} selector : 
+ *                if it's a string, it should be css selector targeting the elements to be included in the gallery
+ *                it could also be a NodeList : document.querySelectorAll('.gallery-item')
+ *                or an Array of nodes : $$('.gallery-item')
  * @param {Object} options gallery parameters
  *  @key {String} name : name of the gallery
  *                If the name is already in use, i'ts completed

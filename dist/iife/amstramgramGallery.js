@@ -1118,9 +1118,9 @@ var AmstramgramGallery = (function () {
     d = document,
     dE = d.documentElement,
     b = d.body,
-    g = 'amst_gallery',
+    g = "amst_gallery",
     on = function on(el, events, callback) {
-      if (el) events.split(' ').forEach(function (ev) {
+      if (el) events.split(" ").forEach(function (ev) {
         return el.addEventListener(ev, callback);
       });
     },
@@ -1134,7 +1134,7 @@ var AmstramgramGallery = (function () {
       return Array.from(el.querySelectorAll(query));
     },
     ins = function ins(el, content) {
-      var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'beforeend';
+      var position = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "beforeend";
       el.insertAdjacentHTML(position, content);
     },
     check = function check(n) {
@@ -1166,22 +1166,22 @@ var AmstramgramGallery = (function () {
      *                If the name is already in use, i'ts completed
      *                by an incremented integer
      *                ('myGallery' becomes 'myGallery-1').
-     *                If not set, an unique name is generated : 
+     *                If not set, an unique name is generated :
      *                'amst_gallery-' followed by an incremented integer
      *                ('amst_gallery-1', 'amst_gallery-2', and so on)
      *  @key {String} overlayBackground : content of the overlay background css property
      *                Default : rgba(0, 0, 0, 0.9)
-     *  @key {String} navItemsBackground : content of the navigation items 
+     *  @key {String} navItemsBackground : content of the navigation items
      *                (close button, left and right arrows) background css property
      *                Default : rgba(33, 33, 33, 0.5)
-     *  @key {String} navItemsBackgroundHover : content of the navigation items 
+     *  @key {String} navItemsBackgroundHover : content of the navigation items
      *                (close button, left and right arrows) background css property
      *                when hovered
      *                Default : rgba(33, 33, 33, 0.7)
-     *  @key {String} navItemsColor : color of the navigation items 
+     *  @key {String} navItemsColor : color of the navigation items
      *                (close button, left and right arrows)
      *                Default : #aaa
-     *  @key {String} navItemsColorHover : color of the navigation items 
+     *  @key {String} navItemsColorHover : color of the navigation items
      *                (close button, left and right arrows) when hovered
      *                Default : #ddd
      *  @key {String} captionBackground : content of the captions
@@ -1219,13 +1219,13 @@ var AmstramgramGallery = (function () {
        * Called when a gallery is opened
        */
       _classPrivateMethodInitSpec(_assertThisInitialized(_this), _updateOptions);
-      //Called when 
+      //Called when
       //  click on next arrow
       //  swipe to the left
       //  press on keyboard right arrow
       _classPrivateMethodInitSpec(_assertThisInitialized(_this), _next);
       //#PREV - #NEXT
-      //Called when 
+      //Called when
       //  click on previous arrow
       //  swipe to the right
       //  press on keyboard left arrow
@@ -1233,7 +1233,7 @@ var AmstramgramGallery = (function () {
       //#GOTO
       /**
        * Translate the slider so the image given by the id parameter is apparent
-       * @param {Integer} id 
+       * @param {Integer} id
        * @param {Boolean} transition : do we need a transition ? (Default: false)
        *                  true if goto is called by a click on navigation arrows or a swipe
        *                  false ig the gallery is opening
@@ -1245,7 +1245,7 @@ var AmstramgramGallery = (function () {
       //#LOAD
       /**
        * Load the img given by the id parameter
-       * @param {Integer} id 
+       * @param {Integer} id
        */
       _classPrivateMethodInitSpec(_assertThisInitialized(_this), _load);
       //End #resize
@@ -1279,12 +1279,12 @@ var AmstramgramGallery = (function () {
       }
       //If option name has not been set,
       //name = 'amst_gallery_inst'
-      options.name = options.name || 'amst_gallery_inst';
+      options.name = options.name || "amst_gallery_inst";
       //Check that the name is not already in use
       var _i = 0,
         n = options.name;
-      while (_classStaticPrivateFieldSpecGet(AG, AG, _names).has(n) || n == 'amst_gallery_inst') {
-        n = options.name + '-' + _i;
+      while (_classStaticPrivateFieldSpecGet(AG, AG, _names).has(n) || n == "amst_gallery_inst") {
+        n = options.name + "-" + _i;
         _i++;
       }
       _this.name = n;
@@ -1297,10 +1297,13 @@ var AmstramgramGallery = (function () {
       //Collect all the valid links
       //Link is valid if it's an anchor whose href attribute matches the regexp
       //or if it has a data-href attribute that matches the rexexp
-      var links = Array.from($$(d, selector)).filter(function (el) {
-        return el.tagName == "A" && el.href.match(_classStaticPrivateFieldSpecGet(AG, AG, _regexp)) || el.hasAttribute('data-href') && el.getAttribute('data-href').match(_classStaticPrivateFieldSpecGet(AG, AG, _regexp));
-      });
-      var linksLength = links.length;
+      var elements = typeof selector === "string" ? Array.from($$(d, selector)) : Array.from(selector),
+        links = elements.filter(function (el) {
+          return el.tagName == "A" && el.href.match(_classStaticPrivateFieldSpecGet(AG, AG, _regexp)) || el.hasAttribute("data-href") && el.getAttribute("data-href").match(_classStaticPrivateFieldSpecGet(AG, AG, _regexp));
+        }),
+        linksLength = links.length;
+      // const links = Array.from($$(d, selector)).filter((el) => (el.tagName == "A" && el.href.match(AG.#regexp)) || (el.hasAttribute('data-href') && el.getAttribute('data-href').match(AG.#regexp)))
+      // const linksLength = links.length
       if (linksLength == 0) return _possibleConstructorReturn(_this);
       links.forEach(function (link, id) {
         var o = {};
@@ -1318,13 +1321,13 @@ var AmstramgramGallery = (function () {
         o.previous = linksLength == 1 ? -1 : id == 0 ? linksLength - 1 : id - 1;
         o.next = linksLength == 1 ? -1 : id == linksLength - 1 ? 0 : id + 1;
         o.sources = $(link, "script") ? $(link, "script").innerHTML : "";
-        o.currentSrc = o.src = link.href ? link.href : link.getAttribute('data-href');
+        o.currentSrc = o.src = link.href ? link.href : link.getAttribute("data-href");
         _classPrivateFieldGet(_assertThisInitialized(_this), _items).push(o);
         //Click on an link shows the gallery
         //link.addEventListener("click", (e) => {
         on(link, "click", function (e) {
           //Open the gallery if click does not occur on an internal anchor
-          if (e.target.tagName != 'A') {
+          if (e.target.tagName != "A") {
             e.preventDefault();
             _this.show(id);
           }
@@ -1396,10 +1399,10 @@ var AmstramgramGallery = (function () {
        *            two figures (to achieve the loop effect).
        *            For all the others, it contains only one figure.
        *       @key content {String} : the HTML content of the picture tag
-       *       @key currentSrc {String} : value of the img currentSrc property 
+       *       @key currentSrc {String} : value of the img currentSrc property
        *            (identical to src property if currentSrc is not supported)
        *       @key height {Integer} : content of the img height attribute
-       *       @key id {Integer} : item identifier 
+       *       @key id {Integer} : item identifier
        *            (0 for the first image, 1 for the second, ...)
        *       @key loaded {Boolean} : true when img is loaded
        *            Reset to false when another gallery is opened
@@ -1417,10 +1420,10 @@ var AmstramgramGallery = (function () {
        *       @key srcset {String} : content of the img srcset attribute
        *       @key title {String} : content of the img title attribute
        *       @key width {Integer} : content of the img width attribute
-       * 
+       *
        * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
        *  when another gallery is opened :
-       *    - loading and loaded properties are reset to false 
+       *    - loading and loaded properties are reset to false
        *    - container property is reset to an empty array []
        *    - currentSrc property is set equal to src
        * !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -1471,12 +1474,12 @@ var AmstramgramGallery = (function () {
             _classPrivateFieldSet(_classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _currentId, -1);
             //Cancel the loading of the images
             //AG.#overlay.querySelectorAll('source').forEach(s => s.parentElement.removeChild(s))
-            $$(_classStaticPrivateFieldSpecGet(AG, AG, _overlay), 'source').forEach(function (s) {
+            $$(_classStaticPrivateFieldSpecGet(AG, AG, _overlay), "source").forEach(function (s) {
               return s.parentElement.removeChild(s);
             });
             //AG.#overlay.querySelectorAll('img').forEach(img => img.src = '')
-            $$(_classStaticPrivateFieldSpecGet(AG, AG, _overlay), 'img').forEach(function (img) {
-              return img.src = '';
+            $$(_classStaticPrivateFieldSpecGet(AG, AG, _overlay), "img").forEach(function (img) {
+              return img.src = "";
             });
             //If necessary, reset the loading and loaded properties of the currentGallery items
             _classPrivateFieldGet(_classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _items).forEach(function (i) {
@@ -1515,17 +1518,17 @@ var AmstramgramGallery = (function () {
        * @param {Object} opts
        *  @key {String} overlayBackground : content of the overlay background css property
        *                (Default: rgba(0, 0, 0, 0.9))
-       *  @key {String} navItemsBackground : content of the navigation items 
+       *  @key {String} navItemsBackground : content of the navigation items
        *                (close button, left and right arrows) background css property
        *                (Default: rgba(33, 33, 33, 0.5))
-       *  @key {String} navItemsBackgroundHover : content of the navigation items 
+       *  @key {String} navItemsBackgroundHover : content of the navigation items
        *                (close button, left and right arrows) background css property
        *                when hovered
        *                (Default: rgba(33, 33, 33, 0.5))
-       *  @key {String} navItemsColor : color of the navigation items 
+       *  @key {String} navItemsColor : color of the navigation items
        *                (close button, left and right arrows)
        *                (Default: rgba(33, 33, 33, 0.5))
-       *  @key {String} navItemsColorHover : color of the navigation items 
+       *  @key {String} navItemsColorHover : color of the navigation items
        *                (close button, left and right arrows) when hovered
        *                (Default: rgba(33, 33, 33, 0.5))
        *  @key {String} captionBackground : content of the captions
@@ -1577,8 +1580,8 @@ var AmstramgramGallery = (function () {
        * @set regexp
        * @param {RegExp} exp
        * @default : /.+\.(gif|jpe?g|png|webp|avif)(\?(.*))?$/i
-       * @description : set the regular expression to filter 
-       *                the allowed image extensions 
+       * @description : set the regular expression to filter
+       *                the allowed image extensions
        *                of the image pointed by the anchor.
        */
       function set(exp) {
@@ -1667,7 +1670,7 @@ var AmstramgramGallery = (function () {
 
       //STATIC #EMITTER
       //static private event emitter
-      //Emits : 
+      //Emits :
       //  amst_gallery-opening
       //  amst_gallery-open
       //  amst_gallery-load
@@ -1682,13 +1685,13 @@ var AmstramgramGallery = (function () {
   /**
    * Insert the overlay in the DOM
    * Called on the first instanciation
-   * @param {Object} options 
+   * @param {Object} options
    */
   function _build(options) {
     //body.insertAdjacentHTML('beforeend', content)
     //${g} = 'amst_gallery'
     ins(b, "\n        <div class=\"".concat(g, "-overlay\">\n          <button class=\"").concat(g, "-nav-item ").concat(g, "-arrow ").concat(g, "-previous\" aria-label=\"").concat(options.previousAriaLabel, "\" title=\"").concat(options.previousTitle, "\"><span></span></button>\n          <button class=\"").concat(g, "-nav-item ").concat(g, "-arrow ").concat(g, "-next\" aria-label=\"").concat(options.nextAriaLabel, "\" title=\"").concat(options.nextTitle, "\"><span></span></button>\n          <button class=\"").concat(g, "-nav-item ").concat(g, "-close\" aria-label=\"").concat(options.closeAriaLabel, "\" title=\"").concat(options.closeTitle, "\"><span><span></span><span></span></span></button>\n        </div>\n      "));
-    //Initialize the static private property #overlay 
+    //Initialize the static private property #overlay
     //const overlay = (AG.#overlay = body.querySelector(".amst_gallery-overlay"))
     var overlay = _classStaticPrivateFieldSpecSet(AG, AG, _overlay, $(b, ".".concat(g, "-overlay")));
     //Initialize pointerDetector
@@ -1722,14 +1725,14 @@ var AmstramgramGallery = (function () {
     var sliderOriginX = 0;
     //overlay.addEventListener('swipe', ...
     //overlay.addEventListener('cancel', ...
-    on(overlay, 'swipe cancel', function (e) {
+    on(overlay, "swipe cancel", function (e) {
       //Reset slideOriginX
       sliderOriginX = 0;
       //If horizontal swipe
-      if (e.detail.orientation == 'hor') {
+      if (e.detail.orientation == "hor") {
         //If the swipe delta.x is greater than 20% of the viewport width
         if (Math.abs(e.detail.delta.x) > 0.2 * dE.clientWidth) {
-          if (e.detail.direction == 'left') {
+          if (e.detail.direction == "left") {
             var _classStaticPrivateFi3;
             _classPrivateMethodGet(_classStaticPrivateFi3 = _classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _next, _next2).call(_classStaticPrivateFi3);
           } else {
@@ -1742,12 +1745,12 @@ var AmstramgramGallery = (function () {
           _classPrivateMethodGet(_classStaticPrivateFi5 = _classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _goTo, _goTo2).call(_classStaticPrivateFi5, _classPrivateFieldGet(_classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _currentId), true);
         }
         //If it's a vertical swipe and if the swipe delta.y is greater than 20% of the viewport height
-      } else if (e.detail.direction == 'down' && Math.abs(e.detail.delta.y) > 0.2 * dE.clientHeight) {
+      } else if (e.detail.direction == "down" && Math.abs(e.detail.delta.y) > 0.2 * dE.clientHeight) {
         _classStaticPrivateMethodGet(AG, AG, _hide).call(AG);
       }
     });
-    on(overlay, 'swiping', function (e) {
-      if (e.detail.orientation == 'vert') return;
+    on(overlay, "swiping", function (e) {
+      if (e.detail.orientation == "vert") return;
       var slider = $(overlay, ".".concat(g, "-slider"));
       if (sliderOriginX == 0) {
         //Swiping begins
@@ -1794,7 +1797,7 @@ var AmstramgramGallery = (function () {
 
     //Tap on the overlay toggles the controls visibility
     //if the tap does not occur on a navigation item or on caption
-    on(overlay, 'click', function (e) {
+    on(overlay, "click", function (e) {
       if (PD.type != "mouse") {
         //Does the the tap occur in caption ?
         var inCaption = false;
@@ -1817,8 +1820,8 @@ var AmstramgramGallery = (function () {
   //Build the slider when a gallery is displayed
   function _buildSlider() {
     /**
-     * 
-     * @param {Object} item 
+     *
+     * @param {Object} item
      * @param {Integer} id
      * @returns for an item with a caption defined as 'My beautiful legend' and an id of 0 :
      * <figure class="amst_gallery-item" data-amst_gallery-id="0">
@@ -1830,7 +1833,7 @@ var AmstramgramGallery = (function () {
     function buildItem(item, id) {
       var
         //Add caption if item.caption is defined
-        figcaption = item.caption ? "<figcaption class=\"".concat(g, "-caption\">").concat(item.caption, "</figcaption>") : '',
+        figcaption = item.caption ? "<figcaption class=\"".concat(g, "-caption\">").concat(item.caption, "</figcaption>") : "",
         //We add a data attribute to the figure element to keep a reference to the image id.
         ret = "<figure class=\"".concat(g, "-item\" data-").concat(g, "-id=\"").concat(id, "\">\n        <div class=\"").concat(g, "-loader\"></div>\n        <picture></picture>").concat(figcaption, "\n        </figure>");
       return ret;
@@ -1875,7 +1878,7 @@ var AmstramgramGallery = (function () {
 
     /**
      * For a gallery holding 3 images :
-     * 
+     *
      * <div class="amst_gallery-slider" style="width:calc(100% * 5);">`
      *  <figure class="amst_gallery-item" data-amst_gallery-id="2">
      *    <div class="amst_gallery-loader"></div>
@@ -1903,7 +1906,7 @@ var AmstramgramGallery = (function () {
      *    <figcaption>My beautiful legend 0</figcaption>
      *  </figure>
      * </div>
-     * 
+     *
      */
     items.forEach(function (i) {
       return i.container = $$(overlay, "figure[data-".concat(g, "-id=\"").concat(i.id, "\"]"));
@@ -1912,16 +1915,16 @@ var AmstramgramGallery = (function () {
   //End #buildSlider
   //STATIC #SHOW
   /**
-  * Show the gallery by adding the amst_gallery-show class to the overlay
-  * If there is only one item in the gallery, add also the amst_gallery-no-arrow class
-  * to hide the arrows.
-  */
+   * Show the gallery by adding the amst_gallery-show class to the overlay
+   * If there is only one item in the gallery, add also the amst_gallery-no-arrow class
+   * to hide the arrows.
+   */
   function _show() {
     var overlay = _classStaticPrivateFieldSpecGet(AG, AG, _overlay),
       currentGallery = _classStaticPrivateFieldSpecGet(AG, AG, _currentGallery);
     //Listen to keyboard event
     //document.body.addEventListener('keydown', AG.#keyboardListener)
-    on(b, 'keydown', _classStaticPrivateMethodGet(AG, AG, _keyboardListener));
+    on(b, "keydown", _classStaticPrivateMethodGet(AG, AG, _keyboardListener));
     //Listen to window resize event
     //window.addEventListener("resize", AG.#resize)
     on(w, "resize", _classStaticPrivateMethodGet(AG, AG, _resize));
@@ -1938,9 +1941,9 @@ var AmstramgramGallery = (function () {
       current: currentGallery.currentItem
     });
     //Emit amst_gallery-open after a 400ms delay (because transition on overlay opacity)
-    on(overlay, 'transitionend', function waitForTransitionEnd(e) {
-      if (e.propertyName == 'opacity' && e.target == overlay) {
-        off(overlay, 'transitionend', waitForTransitionEnd);
+    on(overlay, "transitionend", function waitForTransitionEnd(e) {
+      if (e.propertyName == "opacity" && e.target == overlay) {
+        off(overlay, "transitionend", waitForTransitionEnd);
         _classStaticPrivateFieldSpecGet(AG, AG, _emitter).emit("".concat(g, "-open"), {
           current: currentGallery.currentItem,
           gallery: currentGallery
@@ -1956,7 +1959,7 @@ var AmstramgramGallery = (function () {
     }
     overlay.classList.add("".concat(g, "-show"));
     //Force the visibility of the controls for 1500ms
-    if (PD.type == 'mouse') overlay.dispatchEvent(new CustomEvent('mousemove'));
+    if (PD.type == "mouse") overlay.dispatchEvent(new CustomEvent("mousemove"));
   }
   //End #show
   //STATIC #HIDE
@@ -1966,7 +1969,7 @@ var AmstramgramGallery = (function () {
   function _hide() {
     //Stop listening to keyboard event
     //document.body.removeEventListener('keydown', AG.#keyboardListener)
-    off(b, 'keydown', _classStaticPrivateMethodGet(AG, AG, _keyboardListener));
+    off(b, "keydown", _classStaticPrivateMethodGet(AG, AG, _keyboardListener));
     var currentGallery = _classStaticPrivateFieldSpecGet(AG, AG, _currentGallery),
       overlay = _classStaticPrivateFieldSpecGet(AG, AG, _overlay);
 
@@ -1979,9 +1982,9 @@ var AmstramgramGallery = (function () {
       current: currentGallery.currentItem
     });
     //Wait for the overlay opacity transition from 1 to 0
-    on(overlay, 'transitionend', function waitForTransitionEnd(e) {
-      if (e.propertyName == 'opacity' && e.target == overlay) {
-        off(overlay, 'transitionend', waitForTransitionEnd);
+    on(overlay, "transitionend", function waitForTransitionEnd(e) {
+      if (e.propertyName == "opacity" && e.target == overlay) {
+        off(overlay, "transitionend", waitForTransitionEnd);
         //Update the #visible property
         _classStaticPrivateFieldSpecSet(AG, AG, _visible, false);
         //Stop listening to window resize event
@@ -2010,25 +2013,25 @@ var AmstramgramGallery = (function () {
    * Listen to keyboard events
    * Left/Right arrow keys skip to the previous/next item
    * Escape key close the gallery
-   * @param {keyboard event} e 
+   * @param {keyboard event} e
    */
   function _keyboardListener(e) {
     var _classStaticPrivateFi6, _classStaticPrivateFi7;
     if (!_classStaticPrivateFieldSpecGet(AG, AG, _visible)) return;
-    var keys = ['Escape', 'Esc'];
-    if (_classPrivateFieldGet(_classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _items).length > 1) keys.push('ArrowLeft', 'Left', 'ArrowRight', 'Right');
+    var keys = ["Escape", "Esc"];
+    if (_classPrivateFieldGet(_classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _items).length > 1) keys.push("ArrowLeft", "Left", "ArrowRight", "Right");
     if (keys.includes(e.key)) e.preventDefault();else return;
     switch (e.key) {
-      case 'ArrowLeft':
-      case 'Left':
+      case "ArrowLeft":
+      case "Left":
         _classPrivateMethodGet(_classStaticPrivateFi6 = _classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _prev, _prev2).call(_classStaticPrivateFi6);
         break;
-      case 'ArrowRight':
-      case 'Right':
+      case "ArrowRight":
+      case "Right":
         _classPrivateMethodGet(_classStaticPrivateFi7 = _classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _next, _next2).call(_classStaticPrivateFi7);
         break;
-      case 'Escape':
-      case 'Esc':
+      case "Escape":
+      case "Esc":
         _classStaticPrivateMethodGet(AG, AG, _hide).call(AG);
         break;
     }
@@ -2043,12 +2046,12 @@ var AmstramgramGallery = (function () {
    * just center the image.
    * Position the caption below the image if possible.
    * If not, caption is set at the bottom of the image.
-   * 
+   *
    * Default styling for images set width to 100% and height to auto
    * If the image ratio is less than that of the viewport,
    * width is set to auto and height to 100% by adding the
    * amst_gallery-adapted-width class
-   * 
+   *
    */
   function _resize() {
     //If there is a resizing computation running or if the gallery is hidden
@@ -2067,7 +2070,7 @@ var AmstramgramGallery = (function () {
           item = _classPrivateFieldGet(_classStaticPrivateFieldSpecGet(AG, AG, _currentGallery), _items)[figure.getAttribute("data-".concat(g, "-id"))],
           adaptedWidth = figure.classList.contains("".concat(g, "-adapted-width"));
         //If there is a caption, clean its style
-        if (caption) caption.removeAttribute('style');
+        if (caption) caption.removeAttribute("style");
         if (item.ratio < windowRatio) {
           //Image height is set to 100% and width to auto
           if (!adaptedWidth) figure.classList.add("".concat(g, "-adapted-width"));
@@ -2081,7 +2084,7 @@ var AmstramgramGallery = (function () {
               var availableHeight = (windowHeight - item.height) / 2;
               css += "transform:translateY(".concat(-availableHeight, "px);background:transparent;");
             }
-            caption.setAttribute('style', css);
+            caption.setAttribute("style", css);
           }
         } else {
           //Image width is set to 100% and height to auto
@@ -2094,7 +2097,7 @@ var AmstramgramGallery = (function () {
               if (windowWidth > item.width) {
                 _css += "width:".concat(item.width, "px;");
               }
-              caption.setAttribute('style', _css);
+              caption.setAttribute("style", _css);
             }
           }
         }
@@ -2142,29 +2145,29 @@ var AmstramgramGallery = (function () {
     });
     //For the first and last item, the img is loaded into two containers
     //We only watch the img hold by the first container.
-    on($(item.container[0], 'img'), 'load', function loaded() {
+    on($(item.container[0], "img"), "load", function loaded() {
       var img = this;
       //If the srcset attribute or the source tag have been defined
       //we need to keep the image onload listener.
       //If the window is resized, another source might be loaded
       //and we have to update width, height and style attribute.
-      if (!item.srcset && !item.sources) off(img, 'load', loaded);
+      if (!item.srcset && !item.sources) off(img, "load", loaded);
       //Update the item currentSrc property
       item.currentSrc = img.currentSrc || img.src;
       if (!item.loaded || item.srcset || item.sources) {
         /**
-         * 
+         *
          * @param {Integer} w img naturalWidth
          * @param Integer h img naturalHeight
          * @description : update the img style and its width and height attributes
          */
         var _check = function _check(w, h) {
           var shouldUpdateWidthHeight = false;
-          if (img.getAttribute('width') != w) {
+          if (img.getAttribute("width") != w) {
             shouldUpdateWidthHeight = true;
             item.width = w;
           }
-          if (img.getAttribute('height') != h) {
+          if (img.getAttribute("height") != h) {
             shouldUpdateWidthHeight = true;
             item.height = h;
           }
@@ -2172,10 +2175,10 @@ var AmstramgramGallery = (function () {
             item.ratio = w / h;
             //For first and last item, there are two img data to update!!
             item.container.forEach(function (figure) {
-              var i = $(figure, 'img');
+              var i = $(figure, "img");
               i.setAttribute("width", w);
               i.setAttribute("height", h);
-              i.setAttribute('style', "max-width:".concat(w, "px; max-height:").concat(h, "px; aspect-ratio:").concat(item.ratio, ";"));
+              i.setAttribute("style", "max-width:".concat(w, "px; max-height:").concat(h, "px; aspect-ratio:").concat(item.ratio, ";"));
             });
             item.content = buildItemContent(item);
           }
@@ -2190,8 +2193,8 @@ var AmstramgramGallery = (function () {
                   } catch (err) {}
                 }
               });
-              //Remove the amst_gallery-border class of the img 
-              $(figure, 'img').removeAttribute("class");
+              //Remove the amst_gallery-border class of the img
+              $(figure, "img").removeAttribute("class");
               figure.classList.add("".concat(g, "-item-loaded"));
             });
             //The item is set as loaded
@@ -2213,8 +2216,8 @@ var AmstramgramGallery = (function () {
         //and we need to check it also
         if (img.naturalWidth == 0 || img.naturalHeight == 0 || item.srcset) {
           var checkImg = new Image();
-          on(checkImg, 'load', function loaded() {
-            off(checkImg, 'load', loaded);
+          on(checkImg, "load", function loaded() {
+            off(checkImg, "load", loaded);
             _check(this.naturalWidth, this.naturalHeight);
           });
           checkImg.src = item.currentSrc;
@@ -2248,9 +2251,9 @@ var AmstramgramGallery = (function () {
       }
     });
     item.container.forEach(function (figure, i) {
-      if (item.sources) ins($(figure, "picture"), item.sources, 'afterbegin');
-      if (item.srcset) $(figure, 'img').setAttribute('srcset', item.srcset);
-      $(figure, 'img').src = item.src;
+      if (item.sources) ins($(figure, "picture"), item.sources, "afterbegin");
+      if (item.srcset) $(figure, "img").setAttribute("srcset", item.srcset);
+      $(figure, "img").src = item.src;
     });
   }
   function _goTo2(id) {
@@ -2301,9 +2304,9 @@ var AmstramgramGallery = (function () {
             off(slider, "transitionend", end);
             slider.classList.remove("".concat(g, "-slider-transition"));
             if (needToUpdatePosition) {
-              //First case (go from the last to the first item) : 
+              //First case (go from the last to the first item) :
               //  translate the slider to the second container
-              //Second case (go from the first to the last item) : 
+              //Second case (go from the first to the last item) :
               //  translate the slider to the penultimate container
               slider.style.transform = "translateX(".concat(-100 / numberOfContainers * (id + 1), "%)");
             }
@@ -2355,26 +2358,26 @@ var AmstramgramGallery = (function () {
   function _updateOptions2() {
     var _this3 = this;
     /**
-     * @param {String} p 
+     * @param {String} p
      * @param {Boolean} camel @default false
-     * @returns convert 
-     *            aaa-bbb-ccc 
-     *            to 
+     * @returns convert
+     *            aaa-bbb-ccc
+     *            to
      *            AaaBbbCcc if camel is false (default)
      *            aaaBbbCcc if camel is true
      */
     function camelCase(p) {
       var camel = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-      return p.split('-').map(function (w, id) {
+      return p.split("-").map(function (w, id) {
         return id == 0 && camel ? w : w.charAt(0).toUpperCase() + w.slice(1);
-      }).join('');
+      }).join("");
     }
     if (!_classStaticPrivateFieldSpecGet(AG, AG, _overlay)) {
       _classStaticPrivateMethodGet(AG, AG, _build).call(AG, _classPrivateFieldGet(this, _options));
     } else {
       var navs = $$(_classStaticPrivateFieldSpecGet(AG, AG, _overlay), ".".concat(g, "-nav-item")),
-        ids = ['previous', 'next', 'close'],
-        attrs = ['title', 'aria-label'];
+        ids = ["previous", "next", "close"],
+        attrs = ["title", "aria-label"];
       attrs.forEach(function (attr) {
         //title => Title
         //aria-label => AriaLabel
@@ -2388,7 +2391,7 @@ var AmstramgramGallery = (function () {
         });
       });
     }
-    var cssProps = ['overlay-background', 'nav-items-background', 'nav-items-background-hover', 'nav-items-color', 'nav-items-color-hover', 'caption-background', 'caption-color', 'caption-font-family', 'caption-font-size'];
+    var cssProps = ["overlay-background", "nav-items-background", "nav-items-background-hover", "nav-items-color", "nav-items-color-hover", "caption-background", "caption-color", "caption-font-family", "caption-font-size"];
     cssProps.forEach(function (p) {
       //overlay-background => overlayBackground
       //nav-items-background => navItemsBackground
@@ -2406,21 +2409,21 @@ var AmstramgramGallery = (function () {
   var _defaultOptions = {
     writable: true,
     value: {
-      overlayBackground: 'rgba(0, 0, 0, 0.9)',
-      navItemsBackground: 'rgba(33, 33, 33, 0.5)',
-      navItemsBackgroundHover: 'rgba(33, 33, 33, 0.7)',
-      navItemsColor: '#aaa',
-      navItemsColorHover: '#ddd',
-      captionBackground: 'rgba(0, 0, 0, 0.7)',
-      captionColor: '#fff',
-      captionFontFamily: 'inherit',
-      captionFontSize: '1em',
-      previousTitle: 'Previous',
-      previousAriaLabel: 'Previous',
-      nextTitle: 'Next',
-      nextAriaLabel: 'Next',
-      closeTitle: 'Close',
-      closeAriaLabel: 'Close'
+      overlayBackground: "rgba(0, 0, 0, 0.9)",
+      navItemsBackground: "rgba(33, 33, 33, 0.5)",
+      navItemsBackgroundHover: "rgba(33, 33, 33, 0.7)",
+      navItemsColor: "#aaa",
+      navItemsColorHover: "#ddd",
+      captionBackground: "rgba(0, 0, 0, 0.7)",
+      captionColor: "#fff",
+      captionFontFamily: "inherit",
+      captionFontSize: "1em",
+      previousTitle: "Previous",
+      previousAriaLabel: "Previous",
+      nextTitle: "Next",
+      nextAriaLabel: "Next",
+      closeTitle: "Close",
+      closeAriaLabel: "Close"
     }
   };
   var _regexp = {
